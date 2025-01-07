@@ -58,10 +58,20 @@ These pollutants were chosen due to their widespread presence, regulatory import
 
 However, it has been decided to include the total of the pollutants analyzed in one of the analyses to be performed. This decision is motivated by the desire to gain a holistic view of air quality.</p>
 
-<p><h2><strong>1. Data Cleaning:</strong></h2> 
+<p><h2><strong>2. Data Cleaning:</strong></h2> 
 Before analysis, the dataset is cleaned by checking for missing values, outliers, and inconsistent records. Only valid records are kept for analysis and data completeness and reliability are ensured by removing erroneous entries and handling exceptional event data separately.</p>
+<dl>
+    <dt>Data understandind and review</dt>
+    <db>
+        <ul>
+            <li>This phase involves thoroughly exploring the dataset to comprehend its structure, contents, and any potential issues that may affect the quality of the analysis. After reviewing the metadata, it is considered necessary to unify the columns of "state code", "county code", "site number", and "parameter code", as the combination of these columns serves as the unique identifier for a monitor.The sum up column is named "id". </li>
+            <li>A parameter cn¡an be measured more than once at the same monitor, this event is identified with different "POC" values but same "id". This duplicated measures are taken at the same time in the same site and with the same conditions but with diferent physical instruments. In order to eliminate redundancy in these cases, the average of all measurements for the same parameter is calculated, leaving only one measurement per parameter and per station.</li>
+        </db>
+    
+    <dt>Elimination of duplicated data</dt>
+</dl>
 
-<p><strong>Data Analysis:</strong> Several analyses were conducted to understand air quality patterns in 2024. These include:</p>
+<p><h2><strong>3. Data Analysis</strong></h2> Several analyses were conducted to understand air quality patterns in 2024. These include:</p>
 <ul>
     <li>Mapping pollutant distribution using latitude, longitude, and pollutant concentrations.</li>
     <li>Comparing pollutant concentrations between different states, counties, and cities.</li>
