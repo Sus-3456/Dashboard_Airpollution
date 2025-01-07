@@ -65,10 +65,38 @@ Before analysis, the dataset is cleaned by checking for missing values, outliers
     <db>
         <ul>
             <li>This phase involves thoroughly exploring the dataset to comprehend its structure, contents, and any potential issues that may affect the quality of the analysis. After reviewing the metadata, it is considered necessary to unify the columns of "state code", "county code", "site number", and "parameter code", as the combination of these columns serves as the unique identifier for a monitor.The sum up column is named "id". </li>
-            <li>A parameter cn¡an be measured more than once at the same monitor, this event is identified with different "POC" values but same "id". This duplicated measures are taken at the same time in the same site and with the same conditions but with diferent physical instruments. In order to eliminate redundancy in these cases, the average of all measurements for the same parameter is calculated, leaving only one measurement per parameter and per station.</li>
+            <li>A parameter can be measured more than once at the same monitor, this event is identified with different "POC" values but same "id". This duplicated measures are taken at the same time in the same site and with the same conditions but with diferent physical instruments. In order to eliminate redundancy in these cases, the average of all measurements for the same parameter is calculated, leaving only one measurement per parameter and per station.</li>
         </db>
+        
     
     <dt>Elimination of duplicated data</dt>
+    <dt>Relevant columns</dt>
+    <db>To perform the proposed analyses, it is concluded that only the information from the following columns will be necessary.
+   
+        <p>
+
+| Column Name                | Description                                                                                                                                  |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| State Name                 | The name of the state where the monitoring site is located.                                                                                 |
+| County Name                | The name of the county where the monitoring site is located.                                                                                |
+| City Name                  | The name of the city where the monitoring site is located.                                                                                  |
+| Latitude                   | The latitude of the monitoring site (in decimal degrees).                                                                                   |
+| Longitude                  | The longitude of the monitoring site (in decimal degrees).                                                                                  |
+| Parameter Name             | The name or description of the pollutant being measured.                                                                                     |
+| Arithmetic Mean            | The average concentration of the pollutant for the year.                                                                                    |
+| 1st Max Value              | The highest value of the pollutant concentration in the year.                                                                                |
+| 2nd Max Value              | The second highest value of the pollutant concentration.                                                                                     |
+| 3rd Max Value              | The third highest value of the pollutant concentration.                                                                                      |
+| 4th Max Value              | The fourth highest value of the pollutant concentration.                                                                                     |
+| Primary Exceedance Count   | The count of exceedances of primary air quality standards.                                                                                   |
+| Secondary Exceedance Count | The count of exceedances of secondary air quality standards.                                                                                 |
+| Observation Percent        | The percentage of valid observations compared to the expected.                                                                               |
+| Completeness Indicator     | Indicates if the data meets the required completeness criteria.                                                                              |
+| Event Type                 | Type of exceptional event (if any) that affected data.                                                                                      |
+| Exceptional Data Count     | The number of data points impacted by exceptional events.                                                                                   |
+| Num Obs Below MDL          | The number of observations below the method detection limit.                                                                                 |
+        </p>
+ </db>
 </dl>
 
 <p><h2><strong>3. Data Analysis</strong></h2> Several analyses were conducted to understand air quality patterns in 2024. These include:</p>
