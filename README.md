@@ -65,8 +65,7 @@ Before analysis, the dataset is cleaned by checking for missing values, outliers
     <db>
         <ul>
             <li>This phase involves thoroughly exploring the dataset to comprehend its structure, contents, and any potential issues that may affect the quality of the analysis. After reviewing the metadata, it is considered necessary to unify the columns of "state code", "county code", "site number", and "parameter code", as the combination of these columns serves as the unique identifier for a monitor.The sum up column is named "id". </li>
-> Blockquotes
-The formula is in excel to create the column "id" is: =CONCAT([@[State Code]]; "-"; [@[County Code]]; "-"; [@[Site Num]])
+<blockquote>The formula is in excel to create the column "id" is: =CONCAT([@[State Code]]; "-"; [@[County Code]]; "-"; [@[Site Num]])</blockquote>
             <li>A parameter can be measured more than once at the same monitor, this event is identified with different "POC" values but same "id". This duplicated measures are taken at the same time in the same site and with the same conditions but with diferent physical instruments. In order to eliminate redundancy in these cases, the average of all measurements for the same parameter is calculated, leaving only one measurement per parameter and per station.</li>
         </ul>
     </db>
