@@ -41,7 +41,8 @@ The input data has 30 columns, which contain information about:
 | 30             | Extraction Date    | The date on which this data was retrieved from the AQS Data Mart. This does not mean that all data is valid as of this date. Once monitor information is entered by the reporting agency, it may not be updated as values change (e.g., location setting evolves from urban to suburban). |
 
 # Methodology
-<p><strong>Data Cleaning:</strong>After the data is collected and the different analyses to be performed are clearly defined, a data cleaning and transformation process is carried. <br>
+<p><h2><strong>1. Data Collection:</strong></h2>
+After the data is collected and the different analyses to be performed are clearly defined, a data cleaning and transformation process is carried. <br>
 
 The selection of CO, NOx, O<sub>3</sub> and SO<sub>2</sub> as the focus of the analysis is based on their significant impact on air quality and public health. These pollutants are not only commonly monitored but also have well-established regulatory standards, making them critical indicators for assessing air pollution. Here's a brief explanation for each:<br>
 
@@ -57,7 +58,8 @@ These pollutants were chosen due to their widespread presence, regulatory import
 
 However, it has been decided to include the total of the pollutants analyzed in one of the analyses to be performed. This decision is motivated by the desire to gain a holistic view of air quality.</p>
 
-<p><strong>Data Cleaning:</strong> Before analysis, the dataset is cleaned by checking for missing values, outliers, and inconsistent records. Only valid records are kept for analysis and data completeness and reliability are ensured by removing erroneous entries and handling exceptional event data separately.</p>
+<p><h2><strong>1. Data Cleaning:</strong></h2> 
+Before analysis, the dataset is cleaned by checking for missing values, outliers, and inconsistent records. Only valid records are kept for analysis and data completeness and reliability are ensured by removing erroneous entries and handling exceptional event data separately.</p>
 
 <p><strong>Data Analysis:</strong> Several analyses were conducted to understand air quality patterns in 2024. These include:</p>
 <ul>
