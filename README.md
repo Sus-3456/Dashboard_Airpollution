@@ -40,34 +40,6 @@ The input data has 30 columns, which contain information about:
 | 29             | Tribe Name         | If this monitor resides on tribal lands and the tribe has chosen to identify the site with tribal identifiers, this is the name of the tribe that owns the site. |
 | 30             | Extraction Date    | The date on which this data was retrieved from the AQS Data Mart. This does not mean that all data is valid as of this date. Once monitor information is entered by the reporting agency, it may not be updated as values change (e.g., location setting evolves from urban to suburban). |
 
-# Analisis to be Performed:
-<h2>1. Map of Pollutant Distribution in 2024</h2>
-<p><strong>Analysis:</strong> Visualize the average concentrations of pollutants across various geographic locations (latitude, longitude, state, city). A heatmap will help identify areas with higher pollutant levels, such as PM2.5, NO2, CO, etc., during 2024.</p>
-
-<h2>2. Comparison of Pollutants Between States, Counties, and Cities</h2>
-<p><strong>Analysis:</strong> Compare the average levels of CO, NOx, O<sub>3</sub> and SO<sub>2</sub> pollutant concentrations in various locations, including states, counties, and cities. This will reveal areas with higher or lower pollution levels, providing insights into the regional pollution patterns for 2024.</p>
-
-<h2>3. Identification of Sites with the Highest and Lowest Pollution in 2024</h2>
-<p><strong>Analysis:</strong> Identify the monitoring sites with the highest and lowest CO, NOx, O<sub>3</sub> and SO<sub>2</sub> pollutant concentrations in 2024. This can pinpoint areas that need immediate attention due to high pollution levels.</p>
-
-<h2>4. Exceedance of Air Quality Standards in 2024</h2>
-<p><strong>Analysis:</strong> Analyze how often  CO, NOx, O<sub>3</sub> and SO<sub>2</sub> pollutant levels exceeded air quality standards in 2024. It will identify regions where pollutants surpassed primary or secondary air quality thresholds, indicating non-compliance with air quality regulations.</p>
-
-<h2>5. Analysis of Exceptional Events in 2024</h2>
-<p><strong>Analysis:</strong> Investigate the impact of exceptional events (e.g., wildfires) on air quality in 2024. This analysis will highlight which sites were affected by these events and the extent to which air quality data was influenced.</p>
-
-<h2>6. Distribution of Pollutant Concentrations</h2>
-<p><strong>Analysis:</strong> Analyze the distribution of CO, NOx, O<sub>3</sub> and SO<sub>2</sub> concentrations, focusing on the maximum recorded values. This will help determine whether pollution levels were sporadic or consistent throughout the year.</p>
-
-<h2>7. Coverage of Monitoring Data in 2024</h2>
-<p><strong>Analysis:</strong> Assess the coverage and completeness of air quality monitoring data in 2024. This will identify areas with missing or unreliable data, ensuring the accuracy of the dataset and its applicability to the analyses.</p>
-
-<h2>8. Data Quality Evaluation in 2024</h2>
-<p><strong>Analysis:</strong> Evaluate the number of observations below the method detection limit (MDL). This will help detect potential issues with monitoring equipment or data collection, ensuring the quality of the air quality data.</p>
-
-<h2>9. Analysis of the Most Measured Parameters in 2024</h2>
-<p><strong>Analysis:</strong> Identify the most frequently measured pollutants in 2024. This will help prioritize attention on the pollutants that are most commonly monitored, guiding future research or regulatory actions based on observed patterns.This is the only part of the global analysis that takes into account all the pollutants being analyzed. </p>
-
 # Methodology
 <p><strong>Data Cleaning:</strong>After the data is collected and the different analyses to be performed are clearly defined, a data cleaning and transformation process is carried. <br>
 
@@ -105,5 +77,40 @@ However, it has been decided to include the total of the pollutants analyzed in 
 <p><strong>Statistical Methods:</strong> Statistical techniques such as mean, standard deviation, and percentiles were used to summarize pollutant concentrations. Box plots and heat maps were generated to explore the distribution and variation in air quality data. In addition, correlation analysis was conducted to understand relationships between different pollutants and their geographic spread.</p>
 
 <p><strong>Conclusion:</strong> The methodology provided a comprehensive approach to evaluating air quality data for 2024, offering insights into regional pollution levels, compliance with air quality standards, and the impact of exceptional events. The results can help policymakers and researchers prioritize areas in need of air quality improvements and address any data quality issues observed during the monitoring process.</p>
+
+# Resultados
+<h2>1. Map of Pollutant Distribution in 2024</h2>
+<p><strong>Analysis:</strong> Visualize the average concentrations of pollutants across various geographic locations (latitude, longitude, state, city). A heatmap will help identify areas with higher pollutant levels, such as PM2.5, NO2, CO, etc., during 2024.</p>
+
+<h2>2. Comparison of Pollutants Between States, Counties, and Cities</h2>
+<p><strong>Analysis:</strong> Compare the average levels of CO, NOx, O<sub>3</sub> and SO<sub>2</sub> pollutant concentrations in various locations, including states, counties, and cities. This will reveal areas with higher or lower pollution levels, providing insights into the regional pollution patterns for 2024.</p>
+
+<h2>3. Identification of Sites with the Highest and Lowest Pollution in 2024</h2>
+<p><strong>Analysis:</strong> Identify the monitoring sites with the highest and lowest CO, NOx, O<sub>3</sub> and SO<sub>2</sub> pollutant concentrations in 2024. This can pinpoint areas that need immediate attention due to high pollution levels.</p>
+
+<h2>4. Exceedance of Air Quality Standards in 2024</h2>
+<p><strong>Analysis:</strong> Analyze how often  CO, NOx, O<sub>3</sub> and SO<sub>2</sub> pollutant levels exceeded air quality standards in 2024. It will identify regions where pollutants surpassed primary or secondary air quality thresholds, indicating non-compliance with air quality regulations.</p>
+
+<h2>5. Analysis of Exceptional Events in 2024</h2>
+<p><strong>Analysis:</strong> Investigate the impact of exceptional events (e.g., wildfires) on air quality in 2024. This analysis will highlight which sites were affected by these events and the extent to which air quality data was influenced.</p>
+
+<h2>6. Distribution of Pollutant Concentrations</h2>
+<p><strong>Analysis:</strong> Analyze the distribution of CO, NOx, O<sub>3</sub> and SO<sub>2</sub> concentrations, focusing on the maximum recorded values. This will help determine whether pollution levels were sporadic or consistent throughout the year.</p>
+
+<h2>7. Coverage of Monitoring Data in 2024</h2>
+<p><strong>Analysis:</strong> Assess the coverage and completeness of air quality monitoring data in 2024. This will identify areas with missing or unreliable data, ensuring the accuracy of the dataset and its applicability to the analyses.</p>
+
+<h2>8. Data Quality Evaluation in 2024</h2>
+<p><strong>Analysis:</strong> Evaluate the number of observations below the method detection limit (MDL). This will help detect potential issues with monitoring equipment or data collection, ensuring the quality of the air quality data.</p>
+
+<h2>9. Analysis of the Most Measured Parameters in 2024</h2>
+<p><strong>Analysis:</strong> Identify the most frequently measured pollutants in 2024. This will help prioritize attention on the pollutants that are most commonly monitored, guiding future research or regulatory actions based on observed patterns.This is the only part of the global analysis that takes into account all the pollutants being analyzed. </p>
+
+# Discussions
+''' Desarrollar todas las ideas que has ido generando durante el trabajo y comparacion con otros estudios. Limitaciones con las que se ha topado el estudio '''
+
+# Conclusiones
+
+''' Recapitulacion de los objetivos del trabajo y las ideas que has sacado '''
 
 
