@@ -68,12 +68,14 @@ Before analysis, the dataset is cleaned by checking for missing values, outliers
             <li>A parameter can be measured more than once at the same monitor, this event is identified with different "POC" values but same "id". This duplicated measures are taken at the same time in the same site and with the same conditions but with diferent physical instruments. In order to eliminate redundancy in these cases, the average of all measurements for the same parameter is calculated, leaving only one measurement per parameter and per station.</li>
         </ul>
     </db>
-
     <dt>Elimination of duplicated data</dt>
     <db> ------</db>
-    
+</dl>
+<dl>
     <dt>Relevant columns</dt>
     <db>To perform the proposed analyses, it is concluded that only the information from the following columns will be necessary.
+    </db>
+</dl>
     <p>
 
 | Column Name                | Description                                                                                                                                  |
@@ -97,8 +99,6 @@ Before analysis, the dataset is cleaned by checking for missing values, outliers
 | Exceptional Data Count     | The number of data points impacted by exceptional events.                                                                                   |
 | Num Obs Below MDL          | The number of observations below the method detection limit.                                                                                 |
     </p>
-    </db>
-</dl>
 
 <p><h2><strong>3. Data Analysis</strong></h2> Several analyses were conducted to understand air quality patterns in 2024. These include:</p>
 <ul>
