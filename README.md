@@ -68,6 +68,8 @@ Before analysis, the dataset is cleaned by checking for missing values, outliers
 <blockquote>The formula use in excel to create the column "id" is: =CONCAT([@[State Code]]; "-"; [@[County Code]]; "-"; [@[Site Num]]; "-"; [@[Parameter Code]])</blockquote>
             <li> The "Null Data Count" column shows how many samples were expected but not recorded, providing insight into the reliability or interruptions in the data collection process. Therefore, rows with a value greater than 0 in this column will be removed, as the data they provide is not valid.</li>
             <li>A parameter can be measured more than once at the same monitor, this event is identified with different "POC" values but same "id". This duplicated measures are taken at the same time in the same site and with the same conditions but with diferent physical instruments. In order to eliminate redundancy in these cases, the average of all measurements for the same parameter is calculated, leaving only one measurement per parameter and per station.</li>
+            <li>Since all the data is collected in the year 2024, it has been decided to remove the "year" column. The columns "- Max Datetime" include both the date and the time when the data was recorded. It has been decided to split this information into two separate columns: one for "max date" and another for "max time" in order to make the information more accessible and reachable.</li>
+<blockquote>First we create two new columns, one with "Date" format and the other with "Time". Afterward, we put this formula in "Date": =ENTERO([@[1st Max DateTime]]) ; and this other formula in "Time": =[@[1st Max DateTime]] - ENTERO([@[1st Max DateTime]])</blockquote>
         </ul>
     </db>
     <dt>Elimination of duplicated data</dt>
