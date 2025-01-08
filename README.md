@@ -89,9 +89,9 @@ However, it has been decided to include the total of the pollutants analyzed in 
 Before analysis, the dataset is cleaned by checking for missing values, outliers, and inconsistent records. Only valid records are kept for analysis and data completeness and reliability are ensured by removing erroneous entries and handling exceptional event data separately.</p>
 <dl>
     <dt>Data understandind and review</dt>
-    <db>
+    <db> This phase involves thoroughly exploring the dataset to comprehend its structure, contents, and any potential issues that may affect the quality of the analysis.
         <ul>
-            <li>This phase involves thoroughly exploring the dataset to comprehend its structure, contents, and any potential issues that may affect the quality of the analysis. After reviewing the metadata, it is considered necessary to unify the columns of "state code", "county code", "site number", and "parameter code", as the combination of these columns serves as the unique identifier for a monitor.The sum up column is named "id". </li>
+            <li> After reviewing the metadata, it is considered necessary to unify the columns of "state code", "county code", "site number", and "parameter code", as the combination of these columns serves as the unique identifier for a monitor.The sum up column is named "id". </li>
 <blockquote>The formula use in excel to create the column "id" is: =CONCAT([@[State Code]]; "-"; [@[County Code]]; "-"; [@[Site Num]]; "-"; [@[Parameter Code]])</blockquote>
             <li> The "Null Data Count" column shows how many samples were expected but not recorded, providing insight into the reliability or interruptions in the data collection process. Therefore, rows with a value greater than 0 in this column will be removed, as the data they provide is not valid.</li>
             <blockquote>Select the column, filter by "value is not equal to: 0"  and eliminate all the rows that appears.</blockquote>
