@@ -5,40 +5,67 @@ This interactive dashboard provides insights into the air quality across various
 The data used for this analysis comes from the Air Quality System (AQS), focusing on air pollutants <b>Carbon Monoxide (CO), Nitrogen Oxides (NOx), Ozone (O<sub>3</sub>) and Sulfur Dioxide (SO<sub>2</sub>)</b> for the year <b>2024</b>. The dataset contains information on air quality monitoring stations across the United States, with specific details on the geographic location of each station, measurement methods, and pollutant levels. <br>
 The raw data can be found in <a href="https://aqs.epa.gov/aqsweb/airdata/download_files.html#Annual" target="_blank">United Stated Environmental Protection Agency</a>
 
-The input data has 30 columns, which contain information about:
+The input data has 55 columns, which contain information about:
 
-| Field Position | Field Name         | Description                                                                                             |
-|----------------|--------------------|---------------------------------------------------------------------------------------------------------|
-| 1              | State Code         | The FIPS code of the state in which the monitor resides.                                                 |
-| 2              | County Code        | The FIPS code of the county in which the monitor resides.                                                |
-| 3              | Site Number        | A unique number within the county identifying the site.                                                 |
-| 4              | Parameter Code     | The AQS code corresponding to the parameter measured by the monitor.                                     |
-| 5              | Parameter Name     | The name or description assigned in AQS to the parameter measured by the monitor. Parameters may be pollutants or non-pollutants. |
-| 6              | POC                | This is the “Parameter Occurrence Code” used to distinguish different instruments that measure the same parameter at the same site. |
-| 7              | Latitude           | The monitoring site’s angular distance north of the equator measured in decimal degrees.               |
-| 8              | Longitude          | The monitoring site’s angular distance east of the prime meridian measured in decimal degrees.          |
-| 9              | Datum              | The Datum associated with the Latitude and Longitude measures.                                          |
-| 10             | First Year of Data | The year in which the earliest sample from this site is available in AQS.                               |
-| 11             | Last Sample Date   | The date on which the most recent sample from this site is available in AQS. This is often the best way to determine if a monitor is still operating. Note that the reporting deadlines to AQS are generally lengthy - about 6 months for most parameters. |
-| 12             | Monitor Type       | An administrative or regulatory classification for the monitor.                                        |
-| 13             | Networks           | A list of the monitoring networks (groups of monitors with common goals and procedures) to which the monitor belongs. If the monitor belongs to more than one network, the names will be separated with semicolons. |
-| 14             | Reporting Agency   | The name of the agency responsible for reporting data to AQS.                                           |
-| 15             | PQAO               | The name of the Primary Quality Assurance Organization for the monitor. Monitors of the same parameter belonging to the same PQAO must meet aggregate quality assurance requirements. |
-| 16             | Collecting Agency  | The name of the agency responsible for collecting data from the monitor.                                 |
-| 17             | Exclusions         | If the agency operating the monitor has requested that data from this monitor be excluded from NAAQS calculations and the governing EPA regional office has agreed, the NAAQS standard(s) and the years of exclusion are listed. |
-| 18             | Monitoring Objective | Identification of the reason for measuring air quality by the monitor.                                 |
-| 19             | Last Method Code   | A three digit code representing the measurement method used by the monitor for its most recent sample (methods can change, but often do not). A method code is only unique within a parameter (that is, method 111 for ozone is not the same as method 111 for benzene). |
-| 20             | Last Method        | The full description of the measurement method used by the monitor for its most recent sample (methods can change, but often do not). |
-| 21             | NAAQS Primary Monitor | A flag indicating if this monitor is part of a collocated set of monitors at the site and it is the primary data source for NAAQS data comparisons. |
-| 22             | QA Primary Monitor | A flag indicating if this monitor is part of a collocated set of monitors at the site and it is the primary monitor for making quality assurance comparisons. |
-| 23             | Local Site Name    | The name of the site (if any) given by the State, local, or tribal air pollution control agency that operates it. |
-| 24             | Address            | The approximate street address of the monitoring site.                                                  |
-| 25             | State Name         | The name of the state where the monitoring site is located.                                             |
-| 26             | County Name        | The name of the county where the monitoring site is located.                                            |
-| 27             | City Name          | The name of the city where the monitoring site is located. This represents the legal incorporated boundaries of cities and not urban areas. |
-| 28             | CBSA Name          | The name of the core bases statistical area (metropolitan area) where the monitoring site is located.  |
-| 29             | Tribe Name         | If this monitor resides on tribal lands and the tribe has chosen to identify the site with tribal identifiers, this is the name of the tribe that owns the site. |
-| 30             | Extraction Date    | The date on which this data was retrieved from the AQS Data Mart. This does not mean that all data is valid as of this date. Once monitor information is entered by the reporting agency, it may not be updated as values change (e.g., location setting evolves from urban to suburban). |
+| **Field Position** | **Field Name**           | **Description**                                                                                                                                         |
+|--------------------|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1                  | State Code               | The FIPS code of the state in which the monitor resides.                                                                                                |
+| 2                  | County Code              | The FIPS code of the county in which the monitor resides.                                                                                               |
+| 3                  | Site Num                 | A unique number within the county identifying the site.                                                                                               |
+| 4                  | Parameter Code           | The AQS code corresponding to the parameter measured by the monitor.                                                                                   |
+| 5                  | POC                      | The “Parameter Occurrence Code” used to distinguish different instruments measuring the same parameter at the same site.                                |
+| 6                  | Latitude                 | The monitoring site’s angular distance north of the equator in decimal degrees.                                                                       |
+| 7                  | Longitude                | The monitoring site’s angular distance east of the prime meridian in decimal degrees.                                                                  |
+| 8                  | Datum                    | The Datum associated with the Latitude and Longitude measures.                                                                                         |
+| 9                  | Parameter Name           | The name or description assigned in AQS to the parameter measured by the monitor.                                                                     |
+| 10                 | Sample Duration          | The length of time air passes through the monitoring device before it is analyzed (e.g., 24-hour sample).                                               |
+| 11                 | Pollutant Standard       | The ambient air quality standard rules used to aggregate statistics.                                                                                  |
+| 12                 | Metric Used              | The base metric used in the calculation of aggregate statistics (e.g., Daily Maximum).                                                                |
+| 13                 | Method Name              | A description of the processes, equipment, and protocols used to gather and measure the sample.                                                        |
+| 14                 | Year                     | The year the annual summary data represents.                                                                                                           |
+| 15                 | Units of Measure         | The unit of measure for the parameter (converted to standard units for calculations).                                                                  |
+| 16                 | Event Type               | Indicates if data measured during exceptional events (e.g., wildfires) is included or excluded from the summary.                                        |
+| 17                 | Observation Count        | The number of observations (samples) taken during the year.                                                                                           |
+| 18                 | Observation Percent      | The percentage of valid observations compared to the number of scheduled observations.                                                                 |
+| 19                 | Completeness Indicator   | Indicates if the regulatory data completeness criteria have been met (Y = yes, N = no).                                                               |
+| 20                 | Valid Day Count          | The number of valid days during the year based on monitoring criteria.                                                                                 |
+| 21                 | Required Day Count       | The number of days the monitor was scheduled to take samples.                                                                                          |
+| 22                 | Exceptional Data Count   | The number of data points affected by exceptional air quality events.                                                                                 |
+| 23                 | Null Data Count          | The number of scheduled samples where no data was collected and the reason for the absence.                                                           |
+| 24                 | Primary Exceedance Count | The number of samples exceeding the primary air quality standard.                                                                                     |
+| 25                 | Secondary Exceedance Count| The number of samples exceeding the secondary air quality standard.                                                                                  |
+| 26                 | Certification Indicator   | Indicates if the data’s completeness and accuracy have been certified (Certified, Uncertified, etc.).                                                  |
+| 27                 | Num Obs Below MDL        | The number of samples below the method detection limit (MDL) for the monitoring instrument.                                                           |
+| 28                 | Arithmetic Mean          | The average (arithmetic mean) value for the year.                                                                                                      |
+| 29                 | Arithmetic Standard Dev  | The standard deviation about the mean of the values for the year.                                                                                     |
+| 30                 | 1st Max Value            | The highest value for the year.                                                                                                                         |
+| 31                 | 1st Max DateTime         | The date and time when the highest value for the year occurred.                                                                                        |
+| 32                 | 2nd Max Value            | The second highest value for the year.                                                                                                                 |
+| 33                 | 2nd Max DateTime         | The date and time when the second highest value occurred.                                                                                             |
+| 34                 | 3rd Max Value            | The third highest value for the year.                                                                                                                  |
+| 35                 | 3rd Max DateTime         | The date and time when the third highest value occurred.                                                                                              |
+| 36                 | 4th Max Value            | The fourth highest value for the year.                                                                                                                 |
+| 37                 | 4th Max DateTime         | The date and time when the fourth highest value occurred.                                                                                             |
+| 38                 | 1st Max Non Overlapping Value | The highest value for 8-hour CO averages.                                                                                                           |
+| 39                 | 1st NO Max DateTime      | The date and time when the first maximum non-overlapping value occurred.                                                                               |
+| 40                 | 2nd Max Non Overlapping Value | The second highest non-overlapping value for 8-hour CO averages.                                                                                     |
+| 41                 | 2nd NO Max DateTime      | The date and time when the second maximum non-overlapping value occurred.                                                                              |
+| 42                 | 99th Percentile          | The value where 99% of the rest of the values are equal to or less than.                                                                                |
+| 43                 | 98th Percentile          | The value where 98% of the values are equal to or less than.                                                                                          |
+| 44                 | 95th Percentile          | The value where 95% of the values are equal to or less than.                                                                                          |
+| 45                 | 90th Percentile          | The value where 90% of the values are equal to or less than.                                                                                          |
+| 46                 | 75th Percentile          | The value where 75% of the values are equal to or less than.                                                                                          |
+| 47                 | 50th Percentile          | The median value, where 50% of the values are equal to or less than.                                                                                  |
+| 48                 | 10th Percentile          | The value where 10% of the values are equal to or less than.                                                                                          |
+| 49                 | Local Site Name          | The name of the site provided by the air pollution control agency.                                                                                   |
+| 50                 | Address                  | The approximate street address of the monitoring site.                                                                                               |
+| 51                 | State Name               | The name of the state where the monitoring site is located.                                                                                           |
+| 52                 | County Name              | The name of the county where the monitoring site is located.                                                                                          |
+| 53                 | City Name                | The name of the city where the monitoring site is located.                                                                                            |
+| 54                 | CBSA Name                | The name of the core-based statistical area (metropolitan area) where the monitoring site is located.                                                  |
+| 55                 | Date of Last Change      | The date the last update of any numeric values in the record was made in the AQS data system.                                                          |
+
+
 
 # Methodology
 <p><h2><strong>1. Data Collection:</strong></h2>
