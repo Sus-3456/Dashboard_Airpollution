@@ -71,28 +71,45 @@ The data has <strong>19.642</strong> entrances.
 
 <h2>4.1. Data Transformation and Cleaning</h2>
 After understanding and analyzing the type of information provided in each column, the data was cleaned. This cleaning process involved several interventions:
-<dl>
-   <dt>Blank spaces in the columns:</dt>
-   <dd>vehicle_type, rdsurface, rdcondition, and weather were filled.</dd>
-<blockquote>Using filter by "Blank" and then putting "OTHER" in the columns left</blockquote>
-   <dt>Three new time-related columns were created:</dt>
-   <dd>one for the month in which the accident occurred, another for the day, and another for the day of the week.</dd>
-<blockquote>Formula use to "Dia" column: =TEXTO([@[ta_date]]; "dddd")</blockquote>
-<blockquote>Formula use to "Num_dia" column: =[@DIA]</blockquote>
-<blockquote>Formula use to "Nom_Mes" column: =ELEGIR([@month]; "Enero"; "Febrero"; "Marzo"; "Abril"; "Mayo"; "Junio"; "Julio"; "Agosto"; "Septiembre"; "Octubre"; "Noviembre"; "Diciembre")</blockquote>
-   <dt>Data related to 2025 was removed due to being incomplete.</dt>
-   <dt>A new column was created to categorize the lightcond column into two categories:</dt> 
-   <dd>The raw column had 5 categories, in which there was two with no usable data "OTHER" and "UNKNOWN". Those two categories are not considered to the analysis. The rest of the categories were classified into "daylight" or "darkness".     </dd>
-   <dd>A new column was created to convert the values in the injuries column into numeric values:</dd>
-   <dt> The values with "Yes" are changed into "1" and the values with "No" are changed into "0".</dt>
-<blockquote>Formula use in column "Num_injuries": =SI([@injuries]="yes"; 1; 0)</blockquote>
-   <dt>The vehicle_type column was simplified to a one or two-word description:</dt>
-   <dd>the column originally contained two or three brief descriptions separated by commas, and the new column now retains only the first description.</dd>
-<blockquote>Formula use for vehicule: =LEFT([@vehicule_type]; FIND(","; [@vehicule_type] )-1)</blockquote>
-   <dt>The rdcondition column was simplified: </dt>
-   <dd>The new categories are: "dry", "wet", or "other".</dd>
-<blockquote>Formula use for "day_night" column =SI(ESNUMERO(ENCONTRAR("DAYLIGHT";[@lightcond])); "DAYLIGHT"; "DARK")</blockquote>
-</dl>
+<ul>
+   <li><dt>Three new time-related columns were created:</dt>
+      <dd>one for the month in which the accident occurred, another for the day, and another for the day of the week.</dd>
+      <blockquote>Formula use to "Dia" column: =TEXTO([@[ta_date]]; "dddd")</blockquote>
+      <blockquote>Formula use to "Num_dia" column: =[@DIA]</blockquote>
+      <blockquote>Formula use to "Nom_Mes" column: =ELEGIR([@month]; "Enero"; "Febrero"; "Marzo"; "Abril"; "Mayo"; "Junio"; "Julio"; "Agosto"; "Septiembre"; "Octubre"; "Noviembre"; "Diciembre")</blockquote>
+   </li>
+
+   <li><dt>A new column was created to categorize the lightcond column into two categories:</dt>
+      <dd>The raw column had 5 categories, in which there were two with no usable data "OTHER" and "UNKNOWN". Those two categories are not considered for the analysis. The rest of the categories were classified into "daylight" or "darkness".</dd>
+   </li>
+
+   <li><dt>A new column was created to convert the values in the injuries column into numeric values:</dt>
+      <dd>The values with "Yes" are changed into "1" and the values with "No" are changed into "0".</dd>
+      <blockquote>Formula use in column "Num_injuries": =SI([@injuries]="yes"; 1; 0)</blockquote>
+   </li>
+
+   <li><dt>The vehicle_type column was simplified to a one or two-word description:</dt>
+      <dd>the column originally contained two or three brief descriptions separated by commas, and the new column now retains only the first description.</dd>
+      <blockquote>Formula use for vehicle: =LEFT([@vehicule_type]; FIND(","; [@vehicule_type] )-1)</blockquote>
+   </li>
+
+   <li><dt>The rdcondition column was simplified:</dt>
+      <dd>The new categories are: "dry", "wet", or "other".</dd>
+   </li>
+
+   <li><dt>Blank spaces in the columns:</dt>
+      <dd>vehicle_type, rdsurface, rdcondition, and weather were filled.</dd>
+      <blockquote>Using filter by "Blank" and then putting "OTHER" in the columns left</blockquote>
+   </li>
+
+   <li><dt>Data related to 2025 was removed due to being incomplete.</dt></li>
+   
+   <li><dt>A new column was created to categorize the lightcond column into two categories:</dt>
+      <dd>The raw column had 5 categories, in which there were two with no usable data "OTHER" and "UNKNOWN". Those two categories are not considered to the analysis. The rest of the categories were classified into "daylight" or "darkness".</dd>
+      <blockquote>Formula use for "day_night" column: =SI(ESNUMERO(ENCONTRAR("DAYLIGHT";[@lightcond])); "DAYLIGHT"; "DARK")</blockquote>
+   </li>
+</ul>
+
 <h2>4.2. Removing Duplicates</h2>
 <h3>4.3. Descriptive Analysis</h3>
 <h3>4.4. Dashboard creation</h3>
