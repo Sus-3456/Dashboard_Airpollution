@@ -112,34 +112,61 @@ After understanding and analyzing the type of information provided in each colum
 <h2>4.2. Removing Duplicates</h2>
 Duplicates are identified using the tamainid column and the formula =CONTAR.SI(A:A;A2).
 None is found.
-<h3>4.3. Descriptive Data Analysis</h3>
+<h2>4.3. Descriptive Data Analysis</h2>
 
 <p>Once the data was cleaned, several descriptive analyses are performed to generate insights from the data. These analyses are displayed in the dashboard and can be filtered by year (from 2020 to 2024) and month. The following key analyses are implemented:</p>
+<ul>
+  <li><strong>Number of Fatalities</strong>
+    <p>A count of accidents over time, with filters for year and month. To achieve this, it is used a count of the column "tamainid" by month and year.</p>
+  </li>
 
-<h4>Number of Accidents</h4>
-<p>A simple count of accidents over time, with filters for year and month.To achieve this, it is use a count of the column "tamainid" by month and year.</p>
+  <li><strong>Number of Fatalities by Vehicle Type</strong>
+    <p>A breakdown of accidents by vehicle type (e.g., passenger cars, sport utility vehicles, pickup trucks, etc.).</p>
+  </li>
 
-<h4>Accidents by Vehicle Type</h4>
-<p>A breakdown of accidents by vehicle type (e.g., passenger cars, sport utility vehicles, pickup trucks, etc.).</p>
+  <li><strong>Number of Fatalities by Road Type</strong>
+    <p>Accidents categorized by road type (e.g., local street, state secondary route, public vehicular area).</p>
+  </li>
 
-<h4>Accidents by Road Type</h4>
-<p>Accidents categorized by road type (e.g., local street, state secondary route, public vehicular area).</p>
+  <li><strong>Number of Fatalities by Road Condition</strong>
+    <p>Analysis of accidents by road condition (dry, wet, or other).</p>
+  </li>
 
-<h4>Accidents by Road Condition</h4>
-<p>Analysis of accidents by road condition (dry, wet, or other), showing how weather and road conditions influence accident frequency.</p>
+  <li><strong>Number of Fatalities by Light Conditions</strong>
+    <p>A breakdown of accidents that occurred under daylight versus dark lighting conditions.</p>
+  </li>
+</ul>
 
-<h4>Accidents with Sunlight Conditions</h4>
-<p>A breakdown of accidents that occurred under daylight versus dark lighting conditions.</p>
+<h2>4.4. Dashboard creation</h2>
+Besides the graphics for the analysis mention before, it is add 4 new data:  total number of fatalities, total number of injuries, total number of deaths and the day and number with more fatalities (clasified as "Unlucky"). All this data can be filter by month and by year.
+<h1>5. Analysis Results</h1>
+The total number of fatalities for the 5 years is 19.641, of which the 14% had a report of injuries. The year with more accidents was 2024 with 4.286 fatalities registered, of which 13% had a injurie's report.
+In those 5 years died 27 persons.
+The day with more accidents in those 5 years was a Friday and the number 14th.
+<ul>
+  <li><strong>Number of Fatalities</strong>
+    <p>For the last 3 years (2022,2023,2024) the month with more accidents was October. For 2020 is January and for 2021 is November</p>
+  </li>
 
-<h3>4.4. Dashboard creation</h3>
-<h2>5. Analysis Results</h2>
+  <li><strong>Number of Fatalities by Vehicle Type</strong>
+    <p>The vehicule involved in more fatalities is a passenger car. Probably because is the most common car on the roads</p>
+  </li>
+
+  <li><strong>Number of Fatalities by Road Type</strong>
+    <p>The states secondary routes are the roads with more fatalities registered. A column with the speed of the vehicule o with a description of the accident would have give us more information to understand this phenomeno</p>
+  </li>
+
+  <li><strong>Number of Fatalities by Road Condition</strong>
+    <p>Apparently, we could think that roads with water are more dangerous, and they are, but study results shows that more accidents are reported in dry road condition. This could happen because we tend to be more attentive and take more care when we know the situation is hazardous, and when we cataloge the situation as a "normal" we tend to relax and rely on it.</p>
+  </li>
+
+  <li><strong>Number of Fatalities by Light Conditions</strong>
+    <p>Surprisingly more accidents are report with daylight. This could have a similiar answer as the previous commented analysis, we tend to be more distracted when the conditions are good or more favorables to drive, and that's when accidents happend</p>
+  </li>
+</ul>
 <h2>Conclusions</h2>
 
-1. **Vehicle Type Normalization**:  
-   The `vehicle_type` column originally contained multiple vehicle types separated by a comma. I simplified this to include only the first vehicle type in each record.  
-   **Formula used**:  
-   ```excel
-   =LEFT(H1,FIND(",",H1)-1)
+In conclusion, the analysis reveals that fatalities <strong>are more frequent on dry roads and during daylight hours</strong>, possibly due to drivers' lowered attention when conditions seem favorable. <strong>Passenger cars are the most involved</strong> in fatal accidents, while secondary roads are the most hazardous. <strong>October</strong> consistently emerges as <strong>the month with the highest number of accidents</strong> in the last three years.
 
 
 
