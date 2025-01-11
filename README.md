@@ -1,4 +1,4 @@
-# Dashboard_Airpollution
+# Dashboard_Traffic_Accident_Report
 This interactive dashboard provides insights into the road casualties in the city Town of Carry, in North Carolina.
 # Traffic Accident Dashboard Report - North Carolina
 <h1>1. Introduction</h1>
