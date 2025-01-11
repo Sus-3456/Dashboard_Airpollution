@@ -111,7 +111,24 @@ After understanding and analyzing the type of information provided in each colum
 
 <h2>4.2. Removing Duplicates</h2>
 Duplicates are identified using the tamainid column and the formula =CONTAR.SI(A:A;A2).
-None is found.
+None is found.<br><br>
+For the analysis these columns were used:
+Here is the updated table with an additional column indicating the column number:
+
+| **Column Number** | **Column Name**         | **Description**                                                                                           |
+|-------------------|-------------------------|-----------------------------------------------------------------------------------------------------------|
+| 1                 | `tamainid`              | Unique identifier for each accident.                                                                      |
+| 2                 | `vehicle_type`          | Types of vehicles involved in the accident (e.g., passenger cars, sport utility vehicles, pickup trucks).  |
+| 3                 | `rdclass`               | Type of road classification (e.g., local street, state secondary route, public vehicular area).            |
+| 4                 | `rdcondition`           | Road condition during the accident (e.g., dry, wet, icy, etc.).                                           |
+| 5                 | `lightcond`             | Lighting conditions during the accident (e.g., daylight, dark).                                           |
+| 6                 | `ta_date`               | Date the accident occurred (used for filtering by year and month).                                        |
+| 7                 | `fatality`              | Indicator of whether the accident involved fatalities (1 = yes, 0 = no).                                   |
+| 8                 | `year`                  | Year in which the accident occurred.                                                                      |
+| 9                 | `month`                 | Month in which the accident occurred.                                                                     |
+| 10                | `day_night`             | Indicator of whether the accident occurred during the day or night.                                       |
+| 11                | `Nombre_dia`            | Name of the day (e.g., Monday, Tuesday, etc.).                                                            |
+| 12                | `Num_injuries`          | The number of reported injuries (converted to numeric values: 1 for yes, 0 for no).                        |
 <h2>4.3. Descriptive Data Analysis</h2>
 
 <p>Once the data was cleaned, several descriptive analyses are performed to generate insights from the data. These analyses are displayed in the dashboard and can be filtered by year (from 2020 to 2024) and month. The following key analyses are implemented:</p>
